@@ -2,25 +2,32 @@
 import java.util.*;
 public class Book {
     private String title;
-    private Collection<Author> authors;
-    private Collection<Chapter> chapters = new Collection();
+    private ArrayList<Chapter> chapters = new ArrayList<>();
+    private ArrayList<Author> authors = new ArrayList<>();
     public Book(String title) {
         this.title = title;
     }
-    private void addAuthor(Author author)
+    public void addAuthor(Author author)
     {
         this.authors.add(author);
     }
-    private void createChapter(Chapter chapter)
+    public int createChapter(String chapterName)
     {
-        this.chapters.add(chapter);
+        Chapter ch = new Chapter(chapterName);
+        this.chapters.add(ch);
+        return chapters.indexOf(ch);
     }
-    public void print(){
-        System.out.println("Authors:");
-        for(Author a : authors)
-            System.out.println(a);
-        System.out.println("Chapters:")
-        for(Chapter c : chapters)
-            System.out.println(c);
+    public Chapter getChapter(int index)
+    {
+        return chapters.get(index);
+    }
+    public void print()
+    {
+        System.out.println(this.title);
+        for(Author auth : authors)
+            auth.print();
+        for(Chapter ch : chapters)
+            ch.print();
+
     }
 }

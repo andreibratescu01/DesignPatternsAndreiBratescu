@@ -1,15 +1,23 @@
-import java.util.Collection;
+import java.util.ArrayList;
 
 public class SubChapter {
     private String name;
     private Chapter chapter;
-    private Collection<Image> images = new Collection();
-    private Collection<Paragraph> paragraphs = new Collection();
-    private Collection<Table> tables = new Collection();
-    private void print()
-    {
+    private ArrayList<Element> elements = new ArrayList<>();
 
+    public SubChapter(String name) {
+        this.name = name;
+    }
+    public void addElement(Element e)
+    {
+        elements.add(e);
     }
 
+    public void print()
+    {
+        System.out.println(this.name);
+        for(Element el: elements)
+            el.print();
+    }
 }
 
