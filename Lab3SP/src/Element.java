@@ -1,6 +1,6 @@
 public interface Element {
     public void print();
-    public add(Element e);
-    public remove(Element e);
-    public get(int n);
+    public void add(Element e);
+    public void remove(Element e);
+    public int get(int n);
 }

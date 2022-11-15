@@ -3,7 +3,6 @@ import java.util.*;
 public class Book extends Section {
     private String title;
     private ArrayList<Author> authors = new ArrayList<>();
-    private Section section;
     public Book(String title) {
         this.title = title;
     }
@@ -11,19 +10,18 @@ public class Book extends Section {
     {
         this.authors.add(author);
     }
-    public int createChapter(String chapterName)
+    public void addContent(Element e)
     {
-        Chapter ch = new Chapter(chapterName);
-        this.chapters.add(ch);
-        return chapters.indexOf(ch);
-    }
-    public Chapter getChapter(int index)
-    {
-        return chapters.get(index);
+        this.elements.add(e);
     }
     public void print()
     {
-        System.out.println(this.title);
-        System.out.println(this.section);
+        System.out.println("Book: " + this.title + "\n\nAuthors:");
+        for(Author a: authors) {
+            System.out.print("Author: ");
+            a.print();
+        }
+        System.out.println("\n");
+        super.print();
     }
 }
