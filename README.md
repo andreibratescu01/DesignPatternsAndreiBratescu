@@ -5,3 +5,6 @@ https://github.com/andreibratescu01/DesignPatternsAndreiBratescu/commit/03e4afd1
 
 Nota 10
 
+lab5, lab6 missing
+# Nota finala propusa:
+7
